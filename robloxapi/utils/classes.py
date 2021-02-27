@@ -87,13 +87,15 @@ class Action:
     """
     Represents an audit log action.
     """
-    def __init__(self, action, actor, description, target=None):
+    def __init__(self, action, actor, description,created, target=None):
         """
         :param action: What the action was
         :param actor: Who did the action
         :param description: What changed
+        :param created: When the change was created
         """
         self.action = action
         self.actor = actor
         self.description = description
         self.target = target
+        self.created = created
