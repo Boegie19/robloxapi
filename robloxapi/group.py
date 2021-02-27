@@ -217,7 +217,7 @@ class Group:
             if a['actionType'] == "Change Rank":
                 description = (Role(a["description"]["OldRoleSetId"], a["description"]["OldRoleSetName"]), Role(a["description"]["NewRoleSetId"], a["description"]["NewRoleSetName"]))
                 target = User(self.request, a["description"]["TargetId"], a["description"]["TargetName"])
-            logs.append(Action(a['actionType'], actor, description, target))
+            logs.append(Action(a['actionType'], actor, description,a['created'], target))
         return logs
 
     async def get_members(self):
